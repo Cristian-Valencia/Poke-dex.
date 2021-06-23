@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.module.scss';
-import Title from './components/Title/Title.component' ;
+import Title from './components/Title/Title.container' ;
 
 function App() {
 

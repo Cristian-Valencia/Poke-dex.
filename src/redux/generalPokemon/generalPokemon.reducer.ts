@@ -1,7 +1,7 @@
 import { FETCH_GENERAL_SUCCESS } from './generalPokemon.type' ;
 
 const initialState = {
-    general: {}
+    general: "Hello World"
 }
 
 const pokemonGeneralReducer = ( state = initialState, action:any ) =>{

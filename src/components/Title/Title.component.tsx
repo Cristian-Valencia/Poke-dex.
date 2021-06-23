@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react' ;
 import styles from './Title.module.scss' ;
 import {getGeneralPokemon} from '../../services/generalPokemonService' ;
 
-const Title = () => {
+const Title = ( props:any ) => {
 
     const[ pokemonUrl, setPokemonUrl ] = useState() ;
 
@@ -13,11 +13,15 @@ const Title = () => {
             setPokemonUrl(response) ;
         })
 
+        console.log(props) ;
+
     },[]) ;
 
     if(pokemonUrl!==undefined){
         console.log(pokemonUrl) ;
     }
+
+    
 
     
 
