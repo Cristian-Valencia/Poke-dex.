@@ -1,0 +1,55 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/animation';
+
+.header{
+
+    @include flex-justify( space-between );
+    padding: 3rem;
+    background-color: $redPokedexColor;
+
+    .header-title-container{
+        .header-title{
+            color: $whiteColor;
+        }
+    }
+    
+    .header-hamburger-menu-container{
+
+        @include flex-direction( column );
+
+        .header-hamburger-one, .header-hamburger-two, .header-hamburger-three{
+            display: inline-block;
+            width: 5rem;
+            height: .4rem;
+            background-color: $whiteColor;
+            margin: .5rem;
+        }
+
+        .header-hamburger-one{
+            animation: one 0.5s;
+        }
+        .header-hamburger-three{
+            animation: two 0.5s;
+        }
+
+        .header-hamburger-one-x{
+            animation: xOne 0.5s;
+            position: absolute;
+            top: 7%;
+        }
+
+        .header-hamburger-two-x{
+            background-color: $redPokedexColor;
+        }
+
+        .header-hamburger-three-x{
+            animation: xTwo 0.5s;
+            position: absolute;
+            top: 7%;
+        }
+
+    }
+
+}
