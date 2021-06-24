@@ -1,0 +1,29 @@
+@import './mixins';
+
+.main-title{
+
+    font-size: 30px;
+    font-weight: bold;
+
+    @include lgMinBreakPoint{
+        font-size: 50px;
+    }
+
+}
+
+// .title{
+
+// }
+
+// .subtitle{
+
+// }
+
+// .text{
+
+// }
+
+// .link{
+
+// }
+

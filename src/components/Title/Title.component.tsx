@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react' ;
-import styles from './Title.module.scss' ;
+import './Title.scss' ;
 import {getGeneralPokemon} from '../../services/generalPokemonService' ;
 
 const Title = ( props:any ) => {
@@ -27,7 +27,7 @@ const Title = ( props:any ) => {
 
     return (
 
-        <div className={styles.titleContainer}>
+        <div className="titleContainer">
             <h1>Pokédex App</h1>
         </div>
 

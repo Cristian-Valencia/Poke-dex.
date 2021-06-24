@@ -1,15 +1,21 @@
 import React from 'react';
-import styles from './App.module.scss';
-import Title from './components/Title/Title.container' ;
+import Header from 'components/Header/Header.component';
+import Pages from 'pages/Pages';
+import Footer from 'components/Footer/Footer.component';
 
 function App() {
 
 
 
-  return (
-    <div className={styles.app}>
 
-      <Title />
+  return (
+    <div >
+
+      <Header />
+
+      <Pages />
+
+      <Footer />
 
     </div>
   );
