@@ -1,0 +1,29 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/typography';
+
+.input{
+
+    @include flex-justify( center );
+    padding: 2rem;
+    flex-wrap: wrap;
+
+    h2{
+        width: 100%;
+        text-align: center;
+        color: $greyColor;
+    }
+
+    input{
+        margin-top: 2rem;
+        padding: 2rem;
+        width: 90%;
+        font-size: 2rem;
+        box-shadow: 5px 5px 15px 5px $lightGreyColor;
+        border: none;
+        border-radius: 10px;
+        color: $lightGreyColor;
+    }
+
+}

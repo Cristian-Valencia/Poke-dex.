@@ -2,6 +2,7 @@ import React from 'react';
 import Header from 'components/Header/Header.component';
 import Pages from 'pages/Pages';
 import Footer from 'components/Footer/Footer.component';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
 
@@ -11,11 +12,17 @@ function App() {
   return (
     <div >
 
-      <Header />
+      <Router>
 
-      <Pages />
+        <Header />
 
-      <Footer />
+        <Pages />
+
+        <Footer />
+
+      </Router>
+
+
 
     </div>
   );

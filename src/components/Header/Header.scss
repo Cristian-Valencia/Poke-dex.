@@ -2,10 +2,12 @@
 @import '/src/assets/styles/mixins';
 @import '/src/assets/styles/variables';
 @import '/src/assets/styles/animation';
+@import '/src/assets/styles/typography';
 
 .header{
 
     @include flex-justify( space-between );
+    flex-wrap: wrap;
     padding: 3rem;
     background-color: $redPokedexColor;
 
@@ -35,21 +37,66 @@
         }
 
         .header-hamburger-one-x{
+            display: inline-block;
+            width: 5rem;
+            height: .4rem;
+            background-color: $whiteColor;
+            margin: .5rem;
             animation: xOne 0.5s;
             position: absolute;
             top: 7%;
+            transform: rotate(135deg)
         }
 
         .header-hamburger-two-x{
+            display: inline-block;
+            width: 5rem;
+            height: .4rem;
+            margin: .5rem;
             background-color: $redPokedexColor;
         }
 
         .header-hamburger-three-x{
+            display: inline-block;
+            width: 5rem;
+            height: .4rem;
+            background-color: $whiteColor;
+            margin: .5rem;
             animation: xTwo 0.5s;
             position: absolute;
             top: 7%;
+            transform: rotate(45deg)
         }
 
     }
+
+    .header-dropdown-menu-container{
+        display: none;
+    }
+
+    .header-dropdownmenu-container-active{
+        width: 100%;
+        animation: dropDown 1s;
+        transform-origin: top center;
+
+        .header-dropdown-content{
+            margin-top: 2rem;
+            text-align: right;
+
+            & h2{
+                color: $whiteColor;
+            }
+
+            & h2:nth-child(2){
+                margin-top: 1rem;
+            }
+            & h2:last-child{
+                margin-top: 1rem;
+            }
+        }
+
+    }
+
+
 
 }
