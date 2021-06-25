@@ -1,6 +1,6 @@
 import React from 'react' ;
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './Home/Home.component';
+import { BrowserRouter as Switch, Route } from 'react-router-dom';
+import Home from './Home/Home.container';
 import About from './About/About.component';
 
 // Qua va messo il Router

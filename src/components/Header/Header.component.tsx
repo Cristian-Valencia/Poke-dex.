@@ -19,12 +19,12 @@ const Header = () => {
             </div>
 
             <div className='header-hamburger-menu-container' onClick={hamburgerMenuToggle}>
-                <div className={clicked===false ? "header-hamburger-one" : "header-hamburger-one-x"}></div>
-                <div className={clicked===false ? "header-hamburger-two" : "header-hamburger-two-x"}></div>
-                <div className={clicked===false ? "header-hamburger-three" : "header-hamburger-three-x"}></div>
+                <div className={!clicked ? "header-hamburger-one" : "header-hamburger-one-x"}></div>
+                <div className={!clicked ? "header-hamburger-two" : "header-hamburger-two-x"}></div>
+                <div className={!clicked ? "header-hamburger-three" : "header-hamburger-three-x"}></div>
             </div>
 
-            <div className={clicked===false ? "header-dropdown-menu-container" : "header-dropdownmenu-container-active"}>
+            <div className={!clicked ? "header-dropdown-menu-container" : "header-dropdownmenu-container-active"}>
 
                 <div className="header-dropdown-content">
                     

@@ -1,0 +1,25 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/animation';
+@import '/src/assets/styles/typography';
+
+.card{
+
+    .card-pokemon{
+
+        .card-pokemon-container{
+
+            border: solid 1px black;
+            text-align: center;
+            padding: 2rem;
+
+            & h2{
+                margin: 1rem;
+            }
+
+        }
+
+    }
+
+}
