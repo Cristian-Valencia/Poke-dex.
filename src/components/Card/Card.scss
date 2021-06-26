@@ -6,17 +6,56 @@
 
 .card{
 
+    margin-top:3rem;
+
     .card-pokemon{
 
-        .card-pokemon-container{
+        @include flex-justify(center);
+        flex-wrap: wrap;
 
-            border: solid 1px black;
+        .card-pokemon-container{
+            margin: 2rem 0;
+            width: 70%;
+            border-radius: 10px;
             text-align: center;
             padding: 2rem;
+            @include flex-wrap( wrap );
+            box-shadow: 5px 5px 15px 5px $lightGreyColor;
+            
 
-            & h2{
-                margin: 1rem;
+            .card-pokemon-text{
+
+                text-align: left;
+                width: 50%;
+
+                & h2{
+                    margin: 1rem;
+                    text-transform: capitalize;
+                    color: $greyColor;
+                }
+
+                & p{
+                    margin: 1rem;
+                    padding: .5rem;
+                    background-color: $greyColor;
+                    width: 50%;
+                    border-radius: 10px;
+                    text-align: center;
+                    text-transform: capitalize;
+                    color: $whiteColor;
+                }
+
             }
+
+            .card-pokemon-image-container{
+                width: 50%;
+
+                .card-pokemon-image{
+                    width: 100%;
+                }
+            }
+
+
 
         }
 

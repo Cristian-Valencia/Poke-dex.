@@ -15,8 +15,6 @@ const Home = (props:any) => {
             .then((response:any)=>{
                 setPokemonArray(response.results);
             });
-
-
         
     }, []);
 
@@ -24,12 +22,6 @@ const Home = (props:any) => {
         pokemonArray &&
             props.savePokemonArray(pokemonArray);
     }, [pokemonArray])
-
-
-
-
-
-
 
     return (
         <div>

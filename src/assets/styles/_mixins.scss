@@ -76,3 +76,8 @@
     display: flex;
     flex-direction: $direction;
 }
+
+@mixin flex-wrap($wrap){
+  display: flex;
+  flex-wrap: $wrap;
+}
