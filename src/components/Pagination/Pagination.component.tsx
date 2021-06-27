@@ -3,11 +3,22 @@ import ReactPaginate from 'react-paginate';
 import leftArrow from '../../assets/images/leftArrow.svg';
 import rightArrow from '../../assets/images/rightArrow.svg';
 import './Pagination.scss';
+import { getGeneralPokemon } from 'services/generalPokemonService';
 
-const Pagination = () => {
+const Pagination = (props:any) => {
 
     const handleOnChange = (data:any) => {
-        console.log(data);
+
+        props.resetPokemon();
+        
+        const numberSelected = data.selected * 10 ;
+
+        getGeneralPokemon(numberSelected)
+
+            .then((response:any)=>{
+                props.pokemonInfo(response.results);
+            })
+
     }
 
 

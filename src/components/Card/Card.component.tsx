@@ -3,30 +3,25 @@ import './Card.scss';
 import { getDetailPokemon } from 'services/cardDetailPokemonService';
 
 const Card = (props:any) => {
-    
-    // props.pokemonArray &&
-    //     console.log(props.pokemonArray);
 
     useEffect(() => {
 
         props.pokemonArray.general &&
+
+            console.log(props.pokemonArray.general);
+
             props.pokemonArray.general.map((el:any)=>{
 
                 let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${el.name}`;
 
                 getDetailPokemon(pokemonUrl)
                     .then((response:any)=>{
-                        if(props.pokemonCard.detail.includes!== true){
                             props.savePokemonArray(response);
-                        }
                     })
 
             })
-        
 
-    }, [props.pokemonArray])
-
-    // console.log(props);
+    }, [props.pokemonArray.general])
 
     return (
         <div className='card'>

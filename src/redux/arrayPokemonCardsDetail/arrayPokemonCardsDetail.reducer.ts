@@ -1,4 +1,4 @@
-import { FETCH_DETAIL_SUCCESS } from './arrayPokemonCardsDetail.type';
+import { FETCH_DETAIL_SUCCESS, FETCH_RESET_SUCCESS } from './arrayPokemonCardsDetail.type';
 import { FETCH_SINGLE_SUCCESS } from './arrayPokemonCardsDetail.type';
 
 const initialState ={
@@ -15,6 +15,11 @@ const arrayPokemonCardsDetailReducer = ( state = initialState, action:any ) => {
         case FETCH_SINGLE_SUCCESS:
             return{
                 detail:[ action.payload ]
+            }
+        
+        case FETCH_RESET_SUCCESS:
+            return{
+                detail:[]
             }
         
         default: return state 
