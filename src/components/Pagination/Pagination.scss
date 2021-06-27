@@ -1,0 +1,32 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/animation';
+@import '/src/assets/styles/typography';
+
+.pagination{
+
+    .pagination-break-class{
+        background-color: $lightGreyColor;
+    }
+
+    .pagination-container{
+        @include flex-justify( center );
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .pagination-pages{
+        display: inline;
+        padding: 0 .5em;
+    }
+
+    .paginatione-previous-button{
+        display: inline;
+    }
+
+    .pagination-next-button{
+        display: inline;
+    }
+
+}
