@@ -2,8 +2,13 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import leftArrow from '../../assets/images/leftArrow.svg';
 import rightArrow from '../../assets/images/rightArrow.svg';
+import './Pagination.scss';
 
 const Pagination = () => {
+
+    const handleOnChange = (data:any) => {
+        console.log(data);
+    }
 
 
     const left = <img src={leftArrow} alt="arrowToLeft" className="pagination-left-arrow" />;
@@ -21,7 +26,7 @@ const Pagination = () => {
                 pageCount={20}
                 marginPagesDisplayed={2}
                 pageRangeDisplayed={5}
-                // onPageChange={handleOnChange}
+                onPageChange={handleOnChange}
                 containerClassName="pagination-container"
                 pageClassName="pagination-pages"
                 previousClassName="paginatione-previous-button"

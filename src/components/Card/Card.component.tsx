@@ -4,8 +4,8 @@ import { getDetailPokemon } from 'services/cardDetailPokemonService';
 
 const Card = (props:any) => {
     
-    props.pokemonArray &&
-        console.log(props.pokemonArray);
+    // props.pokemonArray &&
+    //     console.log(props.pokemonArray);
 
     useEffect(() => {
 
@@ -16,7 +16,9 @@ const Card = (props:any) => {
 
                 getDetailPokemon(pokemonUrl)
                     .then((response:any)=>{
-                        props.savePokemonArray(response);
+                        if(props.pokemonCard.detail.includes!== true){
+                            props.savePokemonArray(response);
+                        }
                     })
 
             })
@@ -24,7 +26,7 @@ const Card = (props:any) => {
 
     }, [props.pokemonArray])
 
-    console.log(props);
+    // console.log(props);
 
     return (
         <div className='card'>

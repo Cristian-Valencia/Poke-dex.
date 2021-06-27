@@ -20,7 +20,8 @@
             text-align: center;
             padding: 2rem;
             @include flex-wrap( wrap );
-            box-shadow: 5px 5px 15px 5px $lightGreyColor;
+            box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.1);
+            background-color: $greyCardColor;
             
 
             .card-pokemon-text{
@@ -31,7 +32,14 @@
                 & h2{
                     margin: 1rem;
                     text-transform: capitalize;
-                    color: $greyColor;
+                    &:first-child{
+                        color: $greyColor;
+                        opacity: 50%;
+                    }
+                    &:nth-child(2){
+                        color: $greyColor;
+                    }
+                    
                 }
 
                 & p{

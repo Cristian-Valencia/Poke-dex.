@@ -6,9 +6,12 @@
 
 .pagination{
 
-    .pagination-break-class{
-        background-color: $lightGreyColor;
-    }
+    margin: 2rem 0;
+
+    // .pagination-break-class{
+    //     background-color: $lightGreyColor;
+    //     border-radius: 100%;
+    // }
 
     .pagination-container{
         @include flex-justify( center );
@@ -27,6 +30,21 @@
 
     .pagination-next-button{
         display: inline;
+    }
+
+    .pagination-left-arrow{
+        width: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    .pagination-right-arrow{
+        width: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    .pagination-activated{
+        background-color: $lightGreyColor;
+        border-radius: 100%;
     }
 
 }
