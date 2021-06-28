@@ -53,7 +53,7 @@ const Home = (props:any) => {
 
             :
 
-            <Link to="/about">
+            <Link to="/pokemonPage">
                 <Card />
             </Link>
 

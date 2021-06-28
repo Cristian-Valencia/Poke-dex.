@@ -8,7 +8,7 @@ const Card = (props:any) => {
 
         props.pokemonArray.general &&
 
-            console.log(props.pokemonArray.general);
+            // console.log(props.pokemonArray.general);
 
             props.pokemonArray.general.map((el:any)=>{
 
@@ -23,6 +23,12 @@ const Card = (props:any) => {
 
     }, [props.pokemonArray.general])
 
+    const handleOnClick = (name:string) =>{
+
+        localStorage.setItem('pokemonName', name);
+
+    }
+
     return (
         <div className='card'>
 
@@ -35,7 +41,11 @@ const Card = (props:any) => {
 
                                 let urlImage = `https://pokeres.bastionbot.org/images/pokemon/${el.id}.png`;
 
-                                return <div className='card-pokemon-container' key={index}>
+                                return <div 
+                                            className='card-pokemon-container' 
+                                            key={index} 
+                                            onClick={()=>{handleOnClick(el.name)}}
+                                       >
 
                                             <div className='card-pokemon-text'>
 

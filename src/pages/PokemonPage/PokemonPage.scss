@@ -1,0 +1,29 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/animation';
+@import '/src/assets/styles/typography';
+
+.pokemonpage{
+
+    .pokemonpage-header{
+
+        .pokemonpage-text-container{
+
+            width: 50%;
+
+        }
+
+        .pokemonpage-header-image-container{
+
+            width: 50%;
+
+            .pokemonpage-header-image{
+                width: 100%;
+            }
+
+        }
+
+    }
+
+}
