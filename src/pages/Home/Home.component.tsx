@@ -22,6 +22,8 @@ const Home = (props:any) => {
                 store.dispatch(fetchResetSuccess());
                 store.dispatch(fetchGeneralSuccess(response.results));
             });
+
+        localStorage.removeItem("pokemonName");
         
     }, []);
 

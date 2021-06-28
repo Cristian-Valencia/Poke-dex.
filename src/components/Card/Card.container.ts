@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchDetailSuccess } from '../../redux/arrayPokemonCardsDetail/arrayPokemonCardsDetail.action';
 import Card from './Card.component';
+import { fetchSingleDetail } from 'redux/pokemonSelected/pokemonSelected.action';
 
 const mapStateToProps = (state:any) =>{
     return{
@@ -11,7 +12,8 @@ const mapStateToProps = (state:any) =>{
 
 const mapDispatchToProps = (dispatch:any) =>{
     return{
-        savePokemonArray: (detail:any) => dispatch(fetchDetailSuccess(detail))
+        savePokemonArray: (detail:any) => dispatch(fetchDetailSuccess(detail)),
+        savePokemonSingle: (detail:any) => dispatch(fetchSingleDetail(detail))
     }
 }
 

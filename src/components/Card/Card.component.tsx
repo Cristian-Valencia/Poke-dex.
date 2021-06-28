@@ -27,6 +27,13 @@ const Card = (props:any) => {
 
         localStorage.setItem('pokemonName', name);
 
+        let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${name}`;
+
+        getDetailPokemon(pokemonUrl)
+            .then((response:any)=>{
+                props.savePokemonSingle(response);
+        })
+
     }
 
     return (

@@ -8,22 +8,65 @@
 
     .pokemonpage-header{
 
+        @include flex-wrap(wrap);
+
         .pokemonpage-text-container{
 
             width: 50%;
+            text-align: left;
+            padding: 2rem;
+
+            .pokemonpage-text-id{
+                margin: 1rem;
+            }
+            .pokemonpage-text-name{
+                text-transform: capitalize;
+                margin: 1rem;
+            }
+            .pokemonpage-text-type{
+                margin: 1rem;
+                padding: .5rem;
+                background-color: $greyColor;
+                width: 50%;
+                border-radius: 10px;
+                text-align: center;
+                text-transform: capitalize;
+                color: $whiteColor;
+            }
 
         }
 
         .pokemonpage-header-image-container{
 
             width: 50%;
+            @include flex-justify(center);
+            padding: 1rem;
 
             .pokemonpage-header-image{
-                width: 100%;
+                width: 80%;
             }
 
         }
 
+    }
+
+    .pokemonpage-btn-container{
+        display: flex;
+        width: 100%;
+
+        .pokemonpage-btn{
+            width: 30%;
+            padding: 5%;
+            /* background: rgba(192, 192, 192, 0.61); */
+            /* border-radius: 5px; */
+            text-align: center;
+        }
+        .pokemonpage-active{
+            opacity: 100%;
+        }
+        .pokemonpage-not-active{
+            opacity: 30%;
+        }
     }
 
 }
