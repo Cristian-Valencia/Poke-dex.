@@ -4,7 +4,8 @@ import Evolutions from './Evolutions.component';
 
 const mapStateToProps = (state:any) =>{
     return{
-        pokemonArray : state.arrayPokemonDetails
+        pokemonEvolution : state.pokemonEvolution,
+        pokemonSelected : state.pokemonSelected
     }
 };
 

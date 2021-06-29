@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './About.scss';
-import { getSpecies } from 'services/getSpeciesPokemonService';
+import store from 'redux/store';
+import {fetchEvolutionSuccess} from 'redux/pokemonEvolutionDetail/pokemonEvolutionDetail.action';
+import {getEvolutionsPokemon} from 'services/getPokemonEvolutionDetail';
+
 
 const About = (props:any) => {
 
@@ -16,9 +19,20 @@ const About = (props:any) => {
         Object.keys(props.pokemonSpecies.species).length > 0 &&
             setdescriptionArray(props.pokemonSpecies.species.flavor_text_entries.filter((el:any)=>{return el.language.name === "it"}));
             // console.log(descriptionArray);
+            // props.pokemonSpecies.species.evolution_chain.url!==undefined &&
+            //     getEvolutionsPokemon(props.pokemonSpecies.species.evolution_chain.url)
+            //         .then((response)=>{
+            //             store.dispatch(fetchEvolutionSuccess(response))
+            //         })
             descriptionArray.length > 0 &&
                 setDescription(descriptionArray[2].flavor_text);
-            setType(props.pokemonSpecies.species.egg_groups);
+                setType(props.pokemonSpecies.species.egg_groups);
+
+                props.pokemonSpecies.species.evolution_chain!==undefined &&
+                    getEvolutionsPokemon(props.pokemonSpecies.species.evolution_chain.url)
+                        .then((response)=>{
+                            store.dispatch(fetchEvolutionSuccess(response))
+                        })
             
     }, [props, descriptionArray.length])
 
