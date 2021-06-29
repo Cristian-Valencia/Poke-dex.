@@ -1,0 +1,28 @@
+.about{
+    .about-description-container{
+        padding: 3rem;
+    }
+    .about-pokedex-title{
+        padding-left: 3rem;
+    }
+    .about-pokedex{
+
+        .about-pokedex-data{
+            display: flex;
+            margin: 1em 0;
+
+            .about-pokedex-data-title-container{
+                width: 50%;
+                padding-left: 3rem;
+            }
+            .about-pokedex-data-information-container{
+                width: 50%;
+                .about-pokedex-data-information{
+                    text-transform: capitalize;
+                    padding-top: .5rem;
+                }
+            }
+        }
+
+    }
+}

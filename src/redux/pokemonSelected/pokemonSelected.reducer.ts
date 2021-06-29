@@ -1,7 +1,7 @@
 import {FETCH_SINGLE_DETAIL} from './pokemonSelected.type';
 
 const initialState ={
-    selected: {}
+    single: {}
 };
 
 const pokemonSelectedReducer = ( state = initialState, action:any ) => {
@@ -10,7 +10,7 @@ const pokemonSelectedReducer = ( state = initialState, action:any ) => {
 
         case FETCH_SINGLE_DETAIL:
             return{
-                detail:action.payload 
+                single:action.payload 
             }
         
         default: return state 

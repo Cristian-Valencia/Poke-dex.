@@ -4,7 +4,8 @@ import About from './About.component';
 
 const mapStateToProps = (state:any) =>{
     return{
-        pokemonSelected : state.pokemonSelected
+        pokemonSelected : state.pokemonSelected,
+        pokemonSpecies : state.pokemonSpecies
     }
 };
 

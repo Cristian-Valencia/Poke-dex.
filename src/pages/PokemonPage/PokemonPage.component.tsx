@@ -4,6 +4,10 @@ import { getPokemonSearched } from 'services/getPokemonSearchService';
 import Stats from './Stats/Stats.container';
 import About from './About/About.container';
 import Evolutions from './Evolutions/Evolutions.container';
+import { getSpecies } from 'services/getSpeciesPokemonService';
+import store from 'redux/store';
+import { fetchSingleDetail } from 'redux/pokemonSelected/pokemonSelected.action';
+import { fetchSpeciesSuccess } from 'redux/speciesPokemon/speciesPokemon.action';
 
 const PokemonPage = (props:any) => {
 
@@ -16,16 +20,21 @@ const PokemonPage = (props:any) => {
         
         setName(localStorage.getItem("pokemonName") || "" );
 
-        getPokemonSearched(name)
-            .then((response:any)=>{
-                setPokemonImage(`https://pokeres.bastionbot.org/images/pokemon/${response.id}.png`);
-                // console.log(response);
-                props.savePokemonSingle(response);
-            })
-
-        // console.log(name);
+        name!=="" && 
+            getPokemonSearched(name)
+                .then((response:any)=>{
+                    setPokemonImage(`https://pokeres.bastionbot.org/images/pokemon/${response.id}.png`);
+                    console.log(response);
+                    store.dispatch(fetchSingleDetail(response));
+                    getSpecies(response.species.url)
+                        .then((res)=>{
+                            store.dispatch(fetchSpeciesSuccess(res));
+                        })
+                })
 
     }, [name])
+
+    // console.log(props);
 
 
 
@@ -71,19 +80,19 @@ const PokemonPage = (props:any) => {
                 
 
                 {
-                    props.pokemonSelected.detail &&
+                    props.pokemonSelected.single &&
                         <div className='pokemonpage-text-container'>
-                            <h2 className='pokemonpage-text-id'>#{props.pokemonSelected.detail.id}</h2>
-                            <h1 className='pokemonpage-text-name'>{props.pokemonSelected.detail.name}</h1>
+                            <h2 className='pokemonpage-text-id'>#{props.pokemonSelected.single.id}</h2>
+                            <h1 className='pokemonpage-text-name'>{props.pokemonSelected.single.name}</h1>
                             {
-                                props.pokemonSelected.detail.types &&
-                                    <p className='pokemonpage-text-type'>{props.pokemonSelected.detail.types[0].type.name}</p>
+                                props.pokemonSelected.single.types &&
+                                    <p className='pokemonpage-text-type'>{props.pokemonSelected.single.types[0].type.name}</p>
                             }
 
                             {
-                                props.pokemonSelected.detail.types &&
-                                    props.pokemonSelected.detail.types.length > 1 &&
-                                        <p className='pokemonpage-text-type'>{props.pokemonSelected.detail.types[1].type.name}</p>
+                                props.pokemonSelected.single.types &&
+                                    props.pokemonSelected.single.types.length > 1 &&
+                                        <p className='pokemonpage-text-type'>{props.pokemonSelected.single.types[1].type.name}</p>
                             }
                         </div>
                 }
@@ -95,7 +104,7 @@ const PokemonPage = (props:any) => {
                 <div className='pokemonpage-header-image-container'>
 
                     {
-                        props.pokemonSelected.detail &&
+                        props.pokemonSelected.single &&
                             <img 
                                 src={pokemonImage} 
                                 alt="pokemon-selected-image" 

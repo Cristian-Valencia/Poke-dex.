@@ -4,7 +4,7 @@ import Stats from './Stats.component';
 
 const mapStateToProps = (state:any) =>{
     return{
-        pokemonArray : state.arrayPokemonDetails
+        pokemonSelected : state.pokemonSelected
     }
 };
 
