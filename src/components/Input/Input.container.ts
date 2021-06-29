@@ -15,5 +15,5 @@ const mapDispatchToProps = (dispatch:any) =>{
     }
 }
 
-const CardContainer = connect(mapStateToProps, mapDispatchToProps)(Input);
-export default CardContainer;
+const inputContainer = connect(mapStateToProps, mapDispatchToProps)(Input);
+export default inputContainer;

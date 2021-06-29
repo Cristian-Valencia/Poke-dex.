@@ -1,0 +1,54 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/animation';
+@import '/src/assets/styles/typography';
+
+.evolutions{
+    margin: 2rem 0;
+    .evolutions-image-container{
+        @include flex-wrap(wrap);
+        .evolutions-pokemon-image-container{
+            width: 100%;
+            @include flex-justify(center);
+            .evolutions-pokemon-image{
+                width: 30%;
+            }
+        }
+        .evolutions-pokemon-arrow-container{
+            width: 100%;
+            @include flex-justify(center);
+            .evolution-pokemon-arrow-image{
+                width: 30%;
+            }
+        }
+    
+        .evolutions-evolution-image-container{
+            width: 100%;
+            @include flex-justify(center);
+            .evolutions-evolution-pokemon-image{
+                width: 30%;
+            }
+        }
+    }
+
+    .evolutions-error-container{
+        @include flex-wrap(wrap);
+        .evolutions-error-text-container{
+            width: 100%;
+            @include flex-justify(center);
+            .evolutions-error-text{
+                width: 80%;
+            }
+        }
+        .evolutions-error-gif-container{
+            width: 100%;
+            @include flex-justify(center);
+            .evolutions-error-gif{
+                width: 80%;
+            }
+        }
+    }
+
+
+}

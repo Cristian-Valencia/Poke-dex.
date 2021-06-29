@@ -13,59 +13,146 @@
         @include flex-justify(center);
         flex-wrap: wrap;
 
-        .card-pokemon-container{
-            margin: 2rem 0;
-            width: 70%;
-            border-radius: 10px;
-            text-align: center;
-            padding: 2rem;
-            @include flex-wrap( wrap );
-            box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.1);
-            background-color: $greyCardColor;
-            
+        .card-pokemon-link{
 
-            .card-pokemon-text{
+            @include flex-justify(center);
 
-                text-align: left;
-                width: 50%;
-
-                & h2{
-                    margin: 1rem;
-                    text-transform: capitalize;
-                    &:first-child{
-                        color: $greyColor;
-                        opacity: 50%;
+            .card-pokemon-container{
+                margin: 2rem 0;
+                width: 70%;
+                border-radius: 10px;
+                text-align: center;
+                padding: 2rem;
+                @include flex-wrap( wrap );
+                box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.1);
+                background-color: rgb(218, 218, 218);
+                
+    
+                .card-pokemon-text{
+    
+                    text-align: left;
+                    width: 50%;
+    
+                    & h2{
+                        margin: 1rem;
+                        text-transform: capitalize;
+                        &:first-child{
+                            color: $greyColor;
+                            opacity: 50%;
+                        }
+                        &:nth-child(2){
+                            color: $greyColor;
+                        }
+                        
                     }
-                    &:nth-child(2){
-                        color: $greyColor;
+    
+                    & p{
+                        margin: 1rem;
+                        padding: .5rem;
+                        width: 50%;
+                        border-radius: 10px;
+                        text-align: center;
+                        text-transform: capitalize;
+                        color: $whiteColor;
+                    }
+    
+                    .normal{
+                        background: #AAB09F;
                     }
                     
+                    .fighting{
+                        background: #CB5F48;
+                    }
+                    
+                    .flying{
+                        background: #7DA6DE;
+                    }
+                    
+                    .poison{
+                        background: #B468B7;
+                    }
+                    
+                    .ground{
+                        background: #CC9F4F;
+                    }
+                    
+                    .rock{
+                        background: #B2A061;
+                    }
+                    
+                    .bug{
+                        background: #94BC4A;
+                    }
+                    
+                    .ghost{
+                        background: #846AB6;
+                    }
+                    
+                    .steel{
+                        background: #89A1B0;
+                    }
+                    
+                    .fire{
+                        background: #EA7A3C;
+                    }
+                    
+                    .water{
+                        background: #539AE2;
+                    }
+                    
+                    .grass{
+                        background: #71C558;
+                    }
+                    
+                    .electric{
+                        background: #E5C531;
+                    }
+                    
+                    .psychic{
+                        background: #E5709B;
+                    }
+                    
+                    .ice{
+                        background: #70CBD4;
+                    }
+                    
+                    .dragon{
+                        background: #6A7BAF;
+                    }
+                    
+                    .dark{
+                        background: #736C75;
+                    }
+                    
+                    .fairy{
+                        background: #E397D1;
+                    }
+                    
+                    .unknown{
+                        background: black;
+                    }
+                    
+                    .shadow{
+                        background: grey;
+                    }
+    
                 }
-
-                & p{
-                    margin: 1rem;
-                    padding: .5rem;
-                    background-color: $greyColor;
+    
+                .card-pokemon-image-container{
                     width: 50%;
-                    border-radius: 10px;
-                    text-align: center;
-                    text-transform: capitalize;
-                    color: $whiteColor;
+    
+                    .card-pokemon-image{
+                        width: 100%;
+                    }
                 }
-
+    
+    
+    
             }
-
-            .card-pokemon-image-container{
-                width: 50%;
-
-                .card-pokemon-image{
-                    width: 100%;
-                }
-            }
-
-
 
         }
+
+        
 
     }
 

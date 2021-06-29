@@ -23,7 +23,7 @@ const Home = (props:any) => {
                 store.dispatch(fetchGeneralSuccess(response.results));
             });
 
-        localStorage.clear();
+        localStorage.removeItem("pokemonName");
         
     }, []);
 
@@ -55,10 +55,8 @@ const Home = (props:any) => {
 
             :
 
-            <Link to="/pokemonPage">
-                <Card />
-            </Link>
-
+            <Card />
+            
             }
 
             <Pagination />

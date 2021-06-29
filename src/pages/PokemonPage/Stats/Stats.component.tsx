@@ -3,8 +3,6 @@ import './Stats.scss';
 
 const Stats = (props:any) => {
 
-    console.log(props);
-
     return (
         <div className='stats'>
 
@@ -29,7 +27,7 @@ const Stats = (props:any) => {
                                     <div className='stats-div-one'>
 
                                         <div 
-                                            className="stats-div-two"
+                                            className={`stats-div-two ${props.pokemonSelected.single.types[0].type.name}`}
                                             style={ el.base_stat > 100 ?
                                             {width : "100%"}
                                             :

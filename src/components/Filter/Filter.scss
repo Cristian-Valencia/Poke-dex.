@@ -1,0 +1,34 @@
+@import '/src/assets/styles/global';
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/animation';
+@import '/src/assets/styles/typography';
+
+.filter{
+    width: 10%;
+    .filter-image-container{
+        width: 100%;
+        .filter-image{
+            width: 50%;
+        }
+    }
+
+    .filter-list-container{
+        display: none;
+    }
+
+    .filter-list-container-active{
+        animation: dropDown 1s;
+        transform-origin: top center;
+        background-color: $greyColor;
+        width: 18%;
+        position: absolute;
+        .filter-list{
+            list-style: none;
+            li{
+                color: white;
+                padding: 1rem;
+            }
+        }
+    }
+}

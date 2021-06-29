@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Input.scss';
 import { getPokemonSearched } from 'services/getPokemonSearchService';
+import Filter from '../Filter/Filter.container';
 
 const Input = (props:any) => {
 
@@ -25,11 +26,19 @@ const Input = (props:any) => {
     return (
         <form className='input' onSubmit={handleOnBlur}>
 
-            <h2>Are you looking for a Pokémon?</h2>
+            <div className="input-container">
+
+                <h2>Are you looking for a Pokémon?</h2>
+
+                <Filter />
+
+            </div>
+
+
             
             <input 
                 type="text" 
-                placeholder='What Pokémon are you looking for?' 
+                placeholder='Pokémon Name...' 
                 value = {name}
                 onChange={e => setName(e.target.value)} 
             />

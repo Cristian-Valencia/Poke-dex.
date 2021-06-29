@@ -11,9 +11,6 @@ const About = (props:any) => {
     const [description, setDescription] = useState("");
     const [type, setType] = useState([]);
 
-    console.log(props);
-
-
     useEffect(() => {
 
         Object.keys(props.pokemonSpecies.species).length > 0 &&

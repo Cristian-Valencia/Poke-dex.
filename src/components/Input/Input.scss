@@ -9,11 +9,18 @@
     padding: 2rem;
     flex-wrap: wrap;
 
-    h2{
+    .input-container{
+        @include flex-wrap(wrap);
+        justify-content: space-evenly;
         width: 100%;
-        text-align: center;
-        color: $greyColor;
+        h2{
+            width: 70%;
+            text-align: center;
+            color: $greyColor;
+        }
     }
+
+
 
     input{
         margin-top: 2rem;

@@ -47,7 +47,85 @@
             }
             .stats-div-two{
                 height: .3em;
-                background-color: $greyColor;
+            }
+            .normal{
+                background: #AAB09F;
+            }
+            
+            .fighting{
+                background: #CB5F48;
+            }
+            
+            .flying{
+                background: #7DA6DE;
+            }
+            
+            .poison{
+                background: #B468B7;
+            }
+            
+            .ground{
+                background: #CC9F4F;
+            }
+            
+            .rock{
+                background: #B2A061;
+            }
+            
+            .bug{
+                background: #94BC4A;
+            }
+            
+            .ghost{
+                background: #846AB6;
+            }
+            
+            .steel{
+                background: #89A1B0;
+            }
+            
+            .fire{
+                background: #EA7A3C;
+            }
+            
+            .water{
+                background: #539AE2;
+            }
+            
+            .grass{
+                background: #71C558;
+            }
+            
+            .electric{
+                background: #E5C531;
+            }
+            
+            .psychic{
+                background: #E5709B;
+            }
+            
+            .ice{
+                background: #70CBD4;
+            }
+            
+            .dragon{
+                background: #6A7BAF;
+            }
+            
+            .dark{
+                background: #736C75;
+            }
+            
+            .fairy{
+                background: #E397D1;
+            }
+            
+            .unknown{
+                background: black;
+            }
+            
+            .shadow{
+                background: grey;
             }
         }
     }

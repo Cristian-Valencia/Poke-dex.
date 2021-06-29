@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Evolutions.scss';
+import error from 'assets/images/error.gif';
+import arrow from 'assets/images/arrowGif.gif';
 
 const Evolutions = (props:any) => {
 
@@ -54,7 +56,9 @@ const Evolutions = (props:any) => {
                                 />
                         }
                     </div>
-                    <div className='evolutions-pokemon-arrow-container'></div>
+                    <div className='evolutions-pokemon-arrow-container'>
+                        <img src={arrow} alt="arrow-image-gif" className='evolution-pokemon-arrow-image' />
+                    </div>
                     <div className='evolutions-evolution-image-container'>
                         {
                             evolutionData &&
@@ -70,7 +74,13 @@ const Evolutions = (props:any) => {
                 :
 
                 <div className='evolutions-error-container'>
-                    <h2>The Pokémon doesn't have any Evolutions anymore</h2>
+                    <div className='evolutions-error-text-container'>
+                        <h2 className='evolutions-error-text'>The Pokémon doesn't have any Evolutions anymore</h2>
+                    </div>
+                    <div className='evolutions-error-gif-container'>
+                        <img src={error} alt="arrow-gif" className='evolutions-error-gif' />
+                    </div>
+                    
                 </div>
             }
         </div>

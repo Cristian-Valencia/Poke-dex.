@@ -15,6 +15,7 @@ const PokemonPage = (props:any) => {
     const [pokemonImage, setPokemonImage] = useState("");
     const [selectedArea, setSelectedArea] = useState("About");
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [captured, setCaptured] = useState<boolean>(false);
 
     useEffect(() => {
         
@@ -24,13 +25,13 @@ const PokemonPage = (props:any) => {
             getPokemonSearched(name)
                 .then((response:any)=>{
                     setPokemonImage(`https://pokeres.bastionbot.org/images/pokemon/${response.id}.png`);
-                    console.log(response);
+                    // console.log(response);
                     store.dispatch(fetchSingleDetail(response));
                     getSpecies(response.species.url)
                         .then((res)=>{
                             store.dispatch(fetchSpeciesSuccess(res));
                         })
-                })
+                });
 
     }, [name])
 
@@ -69,6 +70,19 @@ const PokemonPage = (props:any) => {
         }
     };
 
+    const addCaptured = () => {
+        props.savePokemonCaptured(props.pokemonSelected.single);
+    }
+
+    const pokemonCaptured = () =>{
+        setCaptured(!captured);
+    }
+
+    console.log(props);
+
+    const removeCaptured = () => {
+        localStorage.removeItem("capturedPokemon");
+    }
 
     return (
         <div className='pokemonpage'>
@@ -86,13 +100,13 @@ const PokemonPage = (props:any) => {
                             <h1 className='pokemonpage-text-name'>{props.pokemonSelected.single.name}</h1>
                             {
                                 props.pokemonSelected.single.types &&
-                                    <p className='pokemonpage-text-type'>{props.pokemonSelected.single.types[0].type.name}</p>
+                                    <p className={`pokemonpage-text-type ${props.pokemonSelected.single.types[0].type.name}`}>{props.pokemonSelected.single.types[0].type.name}</p>
                             }
 
                             {
                                 props.pokemonSelected.single.types &&
                                     props.pokemonSelected.single.types.length > 1 &&
-                                        <p className='pokemonpage-text-type'>{props.pokemonSelected.single.types[1].type.name}</p>
+                                        <p className={`pokemonpage-text-type ${props.pokemonSelected.single.types[1].type.name}`}>{props.pokemonSelected.single.types[1].type.name}</p>
                             }
                         </div>
                 }
@@ -139,6 +153,17 @@ const PokemonPage = (props:any) => {
 
             
             { handleSwitch( selectedArea ) }
+
+            <div className='pokemonpage-question-container'>
+
+                <h3 className='pokemonpage-question'>Do you already have this pokemon?</h3>
+                <div className='pokemonpage-btn-container'>
+                    <button className={ !captured ? "pokemonpage-yes-activated" : "pokemonpage-yes"} onClick={addCaptured}>Yes</button>
+                    <button className='pokemonpage-no' onClick={removeCaptured}>No</button>
+                </div>
+                
+
+            </div>
 
             
         </div>

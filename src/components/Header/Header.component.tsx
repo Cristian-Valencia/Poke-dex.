@@ -11,12 +11,18 @@ const Header = () => {
         setClicked(!clicked);
     }
 
+    const clearCaptured = () => {
+
+        localStorage.removeItem("capturedPokemon");
+
+    }
+
     return (
         <div className='header'>
 
-            <div className="header-title-container">
+            <Link to="home" className="header-title-container">
                 <h1 className='header-title'>Pokédex</h1>
-            </div>
+            </Link>
 
             <div className='header-hamburger-menu-container' onClick={hamburgerMenuToggle}>
                 <div className={!clicked ? "header-hamburger-one" : "header-hamburger-one-x"}></div>
@@ -28,13 +34,11 @@ const Header = () => {
 
                 <div className="header-dropdown-content">
                     
-                    <Link to="/">
+                    <Link to="home">
                         <h2>HomePage</h2>
                     </Link>
 
-                    <Link to ="/about">
-                        <h2>Login</h2>
-                    </Link>
+                    <h2 onClick={clearCaptured}>Clear Captured</h2>
                     
                     <h2>Captured</h2>
                 </div>

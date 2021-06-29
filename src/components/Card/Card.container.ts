@@ -6,7 +6,9 @@ import { fetchSingleDetail } from 'redux/pokemonSelected/pokemonSelected.action'
 const mapStateToProps = (state:any) =>{
     return{
         pokemonArray : state.generalPokemon,
-        pokemonCard: state.arrayPokemonDetails
+        pokemonCard: state.arrayPokemonDetails,
+        pokemonCaptured : state.capturedPokemon,
+        statusFilter : state.filterPokemon
     }
 };
 

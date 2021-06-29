@@ -6,13 +6,17 @@ import arrayPokemonCardsDetailReducer from './arrayPokemonCardsDetail/arrayPokem
 import pokemonSelectedReducer from './pokemonSelected/pokemonSelected.reducer';
 import speciesPokemonReducer from './speciesPokemon/speciesPokemon.reducer';
 import pokemonEvolutionReducer from './pokemonEvolutionDetail/pokemonEvolutionDetail.reducer';
+import pokemonCapturedReducer from './pokemonCaptured/pokemonCaptured.reducer';
+import filterReducer from './pokemonFilter/pokemonFilter.reducer';
 
 const rootReducer = combineReducers({
     generalPokemon : pokemonGeneralReducer,
     arrayPokemonDetails : arrayPokemonCardsDetailReducer,
     pokemonSelected : pokemonSelectedReducer,
     pokemonSpecies : speciesPokemonReducer,
-    pokemonEvolution : pokemonEvolutionReducer
+    pokemonEvolution : pokemonEvolutionReducer,
+    capturedPokemon : pokemonCapturedReducer,
+    filterPokemon : filterReducer
 })
 
 const store = createStore( rootReducer, applyMiddleware(thunk) ) ;
