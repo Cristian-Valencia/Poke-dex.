@@ -27,6 +27,8 @@ const Home = (props:any) => {
         
     }, []);
 
+    // console.log(localStorage);
+
     // useEffect(() => {
     //     pokemonArray &&
     //         props.savePokemonArray(pokemonArray);

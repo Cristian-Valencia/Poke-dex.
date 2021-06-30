@@ -39,6 +39,18 @@ const Card = (props:any) => {
         })
 
     }
+    // useEffect(() => {
+    //     if(localStorage.getItem("pokemonCaptured") !== "" ){
+    //         setCaptured(JSON.parse(localStorage.getItem("pokemonCaptured") || "" ));
+    //         console.log(captured);
+    //     }
+    // }, [])
+    
+    // console.log(props.statusFilter.status);
+
+
+
+    // console.log(localStorage)
 
     return (
         <div className='card'>
@@ -104,8 +116,8 @@ const Card = (props:any) => {
 
                 {
                     props.statusFilter.status === "Catturati" &&
-                        props.pokemonCaptured.captured &&
-                            props.pokemonCaptured.captured
+                        captured &&
+                            captured
                                 .sort((a:any,b:any)=>a.id-b.id)
                                 .map((el:any, index:number)=>{
 

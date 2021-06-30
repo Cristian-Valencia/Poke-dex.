@@ -18,10 +18,6 @@ export default function pages() {
 
                 </Route>
 
-                <Route exact path="/home">
-                    <Home />
-                </Route>
-
                 <Route exact path='/pokemonPage'>
 
                     <PokemonPage />

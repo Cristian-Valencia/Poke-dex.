@@ -8,6 +8,8 @@ import { getSpecies } from 'services/getSpeciesPokemonService';
 import store from 'redux/store';
 import { fetchSingleDetail } from 'redux/pokemonSelected/pokemonSelected.action';
 import { fetchSpeciesSuccess } from 'redux/speciesPokemon/speciesPokemon.action';
+import { Link } from 'react-router-dom';
+
 
 const PokemonPage = (props:any) => {
 
@@ -25,7 +27,6 @@ const PokemonPage = (props:any) => {
             getPokemonSearched(name)
                 .then((response:any)=>{
                     setPokemonImage(`https://pokeres.bastionbot.org/images/pokemon/${response.id}.png`);
-                    // console.log(response);
                     store.dispatch(fetchSingleDetail(response));
                     getSpecies(response.species.url)
                         .then((res)=>{
@@ -33,7 +34,11 @@ const PokemonPage = (props:any) => {
                         })
                 });
 
+        setCaptured(!captured);
+
     }, [name])
+
+
 
     // console.log(props);
 
@@ -71,21 +76,51 @@ const PokemonPage = (props:any) => {
     };
 
     const addCaptured = () => {
-        props.savePokemonCaptured(props.pokemonSelected.single);
+        if(localStorage.length<2){
+            console.log(localStorage);
+            const capturedArray = [];
+            capturedArray.push(props.pokemonSelected.single);
+            localStorage.setItem("pokemonCaptured", JSON.stringify(capturedArray));
+        } else{
+            const arrayCaptured = JSON.parse(localStorage.getItem("pokemonCaptured")||"");
+            if(arrayCaptured.includes(props.pokemonSelected.single)===false){
+                arrayCaptured.push(props.pokemonSelected.single);
+                localStorage.setItem("pokemonCaptured", JSON.stringify(arrayCaptured));
+                console.log(JSON.parse(localStorage.getItem("pokemonCaptured") || "" ));
+                pokemonCaptured();
+            }
+        }
+        // console.log(localStorage.length);
+        // console.log(props);
+        // const capturedArray = [];
+        // capturedArray.push(props.pokemonSelected.single);
+        // localStorage.setItem("pokemonCaptured", JSON.stringify(capturedArray));
+        // console.log(JSON.parse(localStorage.getItem("pokemonCaptured") || "" ));
+        // pokemonCaptured();
     }
 
     const pokemonCaptured = () =>{
         setCaptured(!captured);
     }
 
-    console.log(props);
-
     const removeCaptured = () => {
         localStorage.removeItem("capturedPokemon");
     }
 
+    const back = () =>{
+        localStorage.removeItem("pokemonName")
+    }
+
     return (
         <div className='pokemonpage'>
+
+            <div className='pokemon-page-back-container'>
+
+                <Link to="/" className='pokemon-page-back-link' onClick={back}>
+                    Torna indietro
+                </Link>
+
+            </div>
 
 
 
@@ -158,7 +193,7 @@ const PokemonPage = (props:any) => {
 
                 <h3 className='pokemonpage-question'>Do you already have this pokemon?</h3>
                 <div className='pokemonpage-btn-container'>
-                    <button className={ !captured ? "pokemonpage-yes-activated" : "pokemonpage-yes"} onClick={addCaptured}>Yes</button>
+                    <button className={ captured===true ? "pokemonpage-yes-activated" : "pokemonpage-yes"} onClick={addCaptured}>Yes</button>
                     <button className='pokemonpage-no' onClick={removeCaptured}>No</button>
                 </div>
                 

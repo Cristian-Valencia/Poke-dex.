@@ -12,15 +12,13 @@ const Header = () => {
     }
 
     const clearCaptured = () => {
-
-        localStorage.removeItem("capturedPokemon");
-
+        localStorage.clear();
     }
 
     return (
         <div className='header'>
 
-            <Link to="home" className="header-title-container">
+            <Link to="/" className="header-title-container">
                 <h1 className='header-title'>Pokédex</h1>
             </Link>
 
@@ -34,7 +32,7 @@ const Header = () => {
 
                 <div className="header-dropdown-content">
                     
-                    <Link to="home">
+                    <Link to="/">
                         <h2>HomePage</h2>
                     </Link>
 
